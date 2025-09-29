@@ -45,6 +45,10 @@
                     <li><a href="#slots" class="nav-link">Slots</a></li>
                     <li><a href="#blackjack" class="nav-link">Blackjack</a></li>
                     <li><a href="#roulette" class="nav-link">Roulette</a></li>
+                    <li><a href="#poker" class="nav-link">Poker</a></li>
+                    <li><a href="#baccarat" class="nav-link">Baccarat</a></li>
+                    <li><a href="#craps" class="nav-link">Craps</a></li>
+                    <li><a href="#keno" class="nav-link">Keno</a></li>
                     <li><a href="#leaderboard" class="nav-link">Leaderboard</a></li>
                 </ul>
             </div>
@@ -95,6 +99,42 @@
                             </div>
                             <h3>Roulette</h3>
                             <p>Bet on your lucky number!</p>
+                            <button class="play-btn">Play Now</button>
+                        </div>
+                        
+                        <div class="game-card" data-game="poker">
+                            <div class="game-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3>Video Poker</h3>
+                            <p>Make the best poker hand!</p>
+                            <button class="play-btn">Play Now</button>
+                        </div>
+                        
+                        <div class="game-card" data-game="baccarat">
+                            <div class="game-icon">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <h3>Baccarat</h3>
+                            <p>Bet on Player, Banker, or Tie!</p>
+                            <button class="play-btn">Play Now</button>
+                        </div>
+                        
+                        <div class="game-card" data-game="craps">
+                            <div class="game-icon">
+                                <i class="fas fa-dice"></i>
+                            </div>
+                            <h3>Craps</h3>
+                            <p>Roll the dice and win!</p>
+                            <button class="play-btn">Play Now</button>
+                        </div>
+                        
+                        <div class="game-card" data-game="keno">
+                            <div class="game-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3>Keno</h3>
+                            <p>Pick your lucky numbers!</p>
                             <button class="play-btn">Play Now</button>
                         </div>
                     </div>
@@ -351,6 +391,184 @@
                                         <div>Last Win: $<span id="rouletteWin">0</span></div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Poker Section -->
+            <section id="poker" class="section">
+                <div class="container">
+                    <h2>Video Poker</h2>
+                    <div class="game-container">
+                        <div class="poker-table">
+                            <div class="poker-hand">
+                                <div class="card" id="pokerCard1">A♠</div>
+                                <div class="card" id="pokerCard2">K♥</div>
+                                <div class="card" id="pokerCard3">Q♦</div>
+                                <div class="card" id="pokerCard4">J♣</div>
+                                <div class="card" id="pokerCard5">10♠</div>
+                            </div>
+                            
+                            <div class="poker-controls">
+                                <div class="bet-controls">
+                                    <label>Bet Amount:</label>
+                                    <div class="bet-buttons">
+                                        <button class="bet-btn" data-bet="5">$5</button>
+                                        <button class="bet-btn" data-bet="10">$10</button>
+                                        <button class="bet-btn" data-bet="25">$25</button>
+                                        <button class="bet-btn" data-bet="50">$50</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="poker-buttons">
+                                    <button id="dealPokerBtn" class="game-btn">Deal</button>
+                                    <button id="drawPokerBtn" class="game-btn" disabled>Draw</button>
+                                    <button id="newPokerGameBtn" class="game-btn" disabled>New Game</button>
+                                </div>
+                                
+                                <div class="poker-info">
+                                    <div>Hand: <span id="pokerHand">-</span></div>
+                                    <div>Payout: <span id="pokerPayout">-</span></div>
+                                    <div>Last Win: $<span id="pokerWin">0</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Baccarat Section -->
+            <section id="baccarat" class="section">
+                <div class="container">
+                    <h2>Baccarat</h2>
+                    <div class="game-container">
+                        <div class="baccarat-table">
+                            <div class="baccarat-area">
+                                <div class="player-area">
+                                    <h3>Player</h3>
+                                    <div class="baccarat-cards" id="baccaratPlayerCards">
+                                        <!-- Player cards will be added here -->
+                                    </div>
+                                    <div class="baccarat-score">Score: <span id="baccaratPlayerScore">0</span></div>
+                                </div>
+                                
+                                <div class="banker-area">
+                                    <h3>Banker</h3>
+                                    <div class="baccarat-cards" id="baccaratBankerCards">
+                                        <!-- Banker cards will be added here -->
+                                    </div>
+                                    <div class="baccarat-score">Score: <span id="baccaratBankerScore">0</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="baccarat-controls">
+                                <div class="bet-controls">
+                                    <label>Bet Amount:</label>
+                                    <div class="bet-buttons">
+                                        <button class="bet-btn" data-bet="25">$25</button>
+                                        <button class="bet-btn" data-bet="50">$50</button>
+                                        <button class="bet-btn" data-bet="100">$100</button>
+                                        <button class="bet-btn" data-bet="200">$200</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="baccarat-bet-areas">
+                                    <button class="baccarat-bet" data-bet="player">Player (1:1)</button>
+                                    <button class="baccarat-bet" data-bet="banker">Banker (0.95:1)</button>
+                                    <button class="baccarat-bet" data-bet="tie">Tie (8:1)</button>
+                                </div>
+                                
+                                <div class="baccarat-buttons">
+                                    <button id="dealBaccaratBtn" class="game-btn">Deal Cards</button>
+                                    <button id="newBaccaratGameBtn" class="game-btn" disabled>New Game</button>
+                                </div>
+                                
+                                <div class="baccarat-status" id="baccaratStatus">Place your bet and deal cards!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Craps Section -->
+            <section id="craps" class="section">
+                <div class="container">
+                    <h2>Craps</h2>
+                    <div class="game-container">
+                        <div class="craps-table">
+                            <div class="dice-area">
+                                <div class="dice" id="dice1">⚀</div>
+                                <div class="dice" id="dice2">⚀</div>
+                                <div class="dice-result">Total: <span id="diceTotal">-</span></div>
+                            </div>
+                            
+                            <div class="craps-controls">
+                                <div class="bet-controls">
+                                    <label>Bet Amount:</label>
+                                    <div class="bet-buttons">
+                                        <button class="bet-btn" data-bet="10">$10</button>
+                                        <button class="bet-btn" data-bet="25">$25</button>
+                                        <button class="bet-btn" data-bet="50">$50</button>
+                                        <button class="bet-btn" data-bet="100">$100</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="craps-bet-areas">
+                                    <button class="craps-bet" data-bet="pass">Pass Line (1:1)</button>
+                                    <button class="craps-bet" data-bet="dontpass">Don't Pass (1:1)</button>
+                                    <button class="craps-bet" data-bet="come">Come (1:1)</button>
+                                    <button class="craps-bet" data-bet="dontcome">Don't Come (1:1)</button>
+                                </div>
+                                
+                                <div class="craps-buttons">
+                                    <button id="rollCrapsBtn" class="game-btn">Roll Dice</button>
+                                    <button id="newCrapsGameBtn" class="game-btn" disabled>New Game</button>
+                                </div>
+                                
+                                <div class="craps-status" id="crapsStatus">Place your bet and roll the dice!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Keno Section -->
+            <section id="keno" class="section">
+                <div class="container">
+                    <h2>Keno</h2>
+                    <div class="game-container">
+                        <div class="keno-table">
+                            <div class="keno-board">
+                                <div class="keno-numbers" id="kenoNumbers">
+                                    <!-- Numbers 1-80 will be generated here -->
+                                </div>
+                            </div>
+                            
+                            <div class="keno-controls">
+                                <div class="bet-controls">
+                                    <label>Bet Amount:</label>
+                                    <div class="bet-buttons">
+                                        <button class="bet-btn" data-bet="5">$5</button>
+                                        <button class="bet-btn" data-bet="10">$10</button>
+                                        <button class="bet-btn" data-bet="25">$25</button>
+                                        <button class="bet-btn" data-bet="50">$50</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="keno-info">
+                                    <div>Numbers Selected: <span id="kenoSelected">0</span>/20</div>
+                                    <div>Numbers Hit: <span id="kenoHit">0</span></div>
+                                    <div>Payout: <span id="kenoPayout">-</span></div>
+                                </div>
+                                
+                                <div class="keno-buttons">
+                                    <button id="playKenoBtn" class="game-btn">Play Keno</button>
+                                    <button id="clearKenoBtn" class="game-btn">Clear Selection</button>
+                                </div>
+                                
+                                <div class="keno-status" id="kenoStatus">Select 1-20 numbers and play!</div>
                             </div>
                         </div>
                     </div>
